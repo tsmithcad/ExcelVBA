@@ -64,7 +64,8 @@ On Error Resume Next
         
         Debug.Print ("End Property")
         
-'OUTPUT EXAMPLE
+'APPEARS IN IMMEDIATES WINDOW
+'RESULT EXAMPLE
 '        Public Shared Property tBlk_LineItemNumber
 '            Get
 '                Return xlTitleBlock.Range("tBlk_LineItemNumber").Value
