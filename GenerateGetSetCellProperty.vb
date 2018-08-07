@@ -37,7 +37,7 @@ On Error Resume Next
         
         'Name propety
         Dim prop_title As String
-        prop_title = "Public Shared Property " & cell_name
+        prop_title = "Public Property " & cell_name
         
         'Remove sheet name referance in property title
         If InStr(prop_title, remove_string) Then
