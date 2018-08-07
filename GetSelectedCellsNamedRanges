@@ -1,4 +1,4 @@
-Public Sub GetSelectedCellsNamedRanges()
+Public Sub GetOrSetSelectedCellsNamedRanges()
 'Date: 8/7/18
 'Author: Thomas Divine Smith
 'Project: Excel VBA
@@ -11,6 +11,7 @@ On Error Resume Next
     
     'Get named ranges of each selected cell
     For Each c In Selection
+        
         'Remove sheet name referance
         Dim remove_string As String
         remove_string = ActiveSheet.Name & "!"
@@ -33,33 +34,45 @@ On Error Resume Next
             named_range = Replace(named_range, remove_string, "")
         End If
         
-        'Create function that returns value of cell
+        'Create property that returns value of cell
         
-        'Name Function
-        Dim func_title As String
-        func_title = "Public Shared Function " & cell_name
+        'Name propety
+        Dim prop_title As String
+        prop_title = "Public Shared Property " & cell_name
         
-        'Remove sheet name referance in function title
-        If InStr(func_title, remove_string) Then
-            func_title = Replace(func_title, remove_string, "")
+        'Remove sheet name referance in property title
+        If InStr(prop_title, remove_string) Then
+            prop_title = Replace(prop_title, remove_string, "")
         End If
         
         'Return value
-        Dim func_return As String
-        func_return = "Return xl" & ActiveSheet.Name & ".Range(" & named_range & ").value"
+        Dim prop_get As String
+        prop_get = "Return xl" & ActiveSheet.Name & ".Range(" & named_range & ").value"
         
-        'End Function
-        Dim func_end
-        func_end = "End Function"
-         
-        Debug.Print (func_title)
-        Debug.Print (func_return)
-        Debug.Print (func_end)
+        Dim prop_set As String
+        prop_set = "xl" & ActiveSheet.Name & ".Range(" & named_range & ").value"
         
-        'OUPUT EXAMPLE
-        'Function iP_Color()
-        '    Return xliProperties.Range("iP_Color").value
-        'End Function
+        Debug.Print (prop_title)
+        
+        Debug.Print ("Get")
+        Debug.Print (prop_get)
+        Debug.Print ("End Get")
+        
+        Debug.Print ("Set(ByVal Value)")
+        Debug.Print (prop_set & " = Value")
+        Debug.Print ("End Set")
+        
+        Debug.Print ("End Property")
+        
+'OUTPUT EXAMPLE
+'        Public Shared Property tBlk_LineItemNumber
+'            Get
+'                Return xlTitleBlock.Range("tBlk_LineItemNumber").Value
+'            End Get
+'            Set(ByVal Value)
+'                xlTitleBlock.Range("tBlk_LineItemNumber").Value = Value
+'            End Set
+'        End Property
     Next
 
 End Sub
