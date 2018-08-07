@@ -8,7 +8,6 @@ Public Sub GetOrSetSelectedCellsNamedRanges()
 On Error Resume Next
 
     Dim c As Range
-    
     'Get named ranges of each selected cell
     For Each c In Selection
         
@@ -53,15 +52,12 @@ On Error Resume Next
         prop_set = "xl" & ActiveSheet.Name & ".Range(" & named_range & ").value"
         
         Debug.Print (prop_title)
-        
         Debug.Print ("Get")
         Debug.Print (prop_get)
         Debug.Print ("End Get")
-        
         Debug.Print ("Set(ByVal Value)")
         Debug.Print (prop_set & " = Value")
         Debug.Print ("End Set")
-        
         Debug.Print ("End Property")
         
 'APPEARS IN IMMEDIATES WINDOW
