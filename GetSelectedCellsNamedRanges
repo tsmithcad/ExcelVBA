@@ -23,11 +23,11 @@ On Error Resume Next
         
         'Name Function
         Dim func_title As String
-        func_title = "Function " & cell_name
+        func_title = "Public Shared Function " & cell_name
         
         'Return value
         Dim func_return As String
-        func_return = "Return xliProperties.Range(" & named_range & ").value"
+        func_return = "Return xl" & ActiveSheet.Name & ".Range(" & named_range & ").value"
         
         'End Function
         Dim func_end
