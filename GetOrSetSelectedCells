@@ -2,7 +2,7 @@ Public Sub GetOrSetSelectedCellsNamedRanges()
 'Date: 8/7/18
 'Author: Thomas Divine Smith
 'Project: Excel VBA
-'Purpose: Writes a function to return the value of all the selected cells named ranges
+'Purpose: Creates a Get/Set Property to access selected cells in Visual Studio/Vb.NET
 'Instructions: Select your cells & run this macro.
 
 On Error Resume Next
