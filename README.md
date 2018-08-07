@@ -3,6 +3,6 @@ Collection of VBA code I authored for Excel
 
 GetSelectedCellsNamedRanges:
 
-Writes a function to return the value of all the selected cells named ranges
+Creates Get/Set Property in immediates window to reference cells in Visual Studio/Vb.NET
 
-Select your cells & run this macro The result will then appear in your immediates window
+Select your cells & run this macro.
