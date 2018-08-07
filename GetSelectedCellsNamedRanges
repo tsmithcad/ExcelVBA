@@ -5,6 +5,9 @@ Public Sub GetSelectedCellsNamedRanges()
 'Purpose: Writes a function to return the value of
 'all the selected cells named ranges
 
+'Instructions: Select your cells & run this macro
+'The result will then appear in your immediates window
+
 On Error Resume Next
 
     Dim c As Range
