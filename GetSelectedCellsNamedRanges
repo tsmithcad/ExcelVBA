@@ -3,7 +3,7 @@ Public Sub GetSelectedCellsNamedRanges()
 'Author: Thomas Divine Smith
 'Project: Excel VBA
 'Purpose: Writes a function to return the value of
-'selected cells named range
+'all the selected cells named ranges
 
 On Error Resume Next
 
@@ -32,6 +32,20 @@ On Error Resume Next
         'End Function
         Dim func_end
         func_end = "End Function"
+        
+        'Remove sheet name referance
+        Dim remove_string As String
+        remove_string = ActiveSheet.Name & "!"
+        
+        'Remove sheet name referance in function title
+        If InStr(func_title, remove_string) Then
+            func_title = Replace(func_title, remove_string, "")
+        End If
+        
+        'Remove sheet name referance in named range
+        If InStr(named_range, remove_string) Then
+            named_range = Replace(named_range, remove_string, "")
+        End If
         
         Debug.Print (func_title)
         Debug.Print (func_return)
