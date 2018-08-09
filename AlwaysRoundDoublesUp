@@ -1,0 +1,12 @@
+'Date: 8/9/18
+'Author: Thomas Divine Smith
+'Project: Excel VBA
+'Purpose: If Double round up to the next Integer
+
+Function RoundUp(ByVal Value As Double)
+    If Int(Value) = Value Then
+        RoundUp = Value
+    Else
+        RoundUp = Int(Value) + 1
+    End If
+End Function
